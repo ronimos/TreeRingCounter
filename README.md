@@ -8,3 +8,6 @@ to install via Anaconda (recommended if you use Anaconda distribution) open the 
 
 The script will let you choose an image file, open the image and wait for you to draw a line (you can redraw the line as many times as you want). The script will count and map the tree rings along this line. After the line is drawn click Esc and the script will count and map the rings along the line. 
 
+## Exapmle:
+
+[!alt text](https://github.com/ronimos/TreeRingCounter/blob/master/Examples/Tree%20rings%20counter2.png)
