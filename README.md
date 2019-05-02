@@ -10,4 +10,4 @@ The script will let you choose an image file, open the image and wait for you to
 
 ## Exapmle:
 
-[!alt text](https://github.com/ronimos/TreeRingCounter/blob/master/Examples/Tree%20rings%20counter2.png)
+![alt text](https://github.com/ronimos/TreeRingCounter/blob/master/Examples/Tree%20rings%20counter2.png)
