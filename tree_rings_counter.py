@@ -171,29 +171,29 @@ def save_rings_map(rings):
         df.to_csv(save_file, index=False)
     
 
-    
-# Select image and read it
-Tk().withdraw()
-img_file = askopenfilename(filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
-img = cv2.imread(img_file)
+if __name__=="__main__":    
+    # Select image and read it
+    Tk().withdraw()
+    img_file = askopenfilename(filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
+    img = cv2.imread(img_file)
 
-# Set the window and mouse event for line draw with a mouse
-cv2.namedWindow("Tree rings", cv2.WINDOW_NORMAL)
-cv2.setMouseCallback("Tree rings", onmouse)
+    # Set the window and mouse event for line draw with a mouse
+    cv2.namedWindow("Tree rings", cv2.WINDOW_NORMAL)
+    cv2.setMouseCallback("Tree rings", onmouse)
 
-timg = img.copy()
-# Wait for a line to be drawn and update the image with a new line every time the  mouse moves
-while True:
-    cv2.imshow("Tree rings", timg)
-    k = cv2.waitKey(30)
-    if k & 0xFF==27:
-        cv2.destroyAllWindows()
-        break
-    
-if (x1,y1)!=(x2,y2):
     timg = img.copy()
-    # Rotate the image so the drawn line will be horizontal for easy calculations
-    rotated, rx1, ry1, rx2, ry2 = rotate_image(timg, (x1,y1), (x2,y2))
-    img_strip, intensity, threshholds, rings_map, rings_count = count_and_map_rings(rotated, rx1, ry1, rx2, ry2)
-    plot_map_rings(img_strip, intensity, threshholds, rings_map, rings_count)
+    # Wait for a line to be drawn and update the image with a new line every time the  mouse moves
+    while True:
+        cv2.imshow("Tree rings", timg)
+        k = cv2.waitKey(30)
+        if k & 0xFF==27:
+            cv2.destroyAllWindows()
+            break
+
+    if (x1,y1)!=(x2,y2):
+        timg = img.copy()
+        # Rotate the image so the drawn line will be horizontal for easy calculations
+        rotated, rx1, ry1, rx2, ry2 = rotate_image(timg, (x1,y1), (x2,y2))
+        img_strip, intensity, threshholds, rings_map, rings_count = count_and_map_rings(rotated, rx1, ry1, rx2, ry2)
+        plot_map_rings(img_strip, intensity, threshholds, rings_map, rings_count)
     
