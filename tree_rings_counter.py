@@ -73,14 +73,14 @@ def rotate_image(img, p1, p2):
     x1,y1 = p1
     x2,y2 = p2
     if x1==x2:
-        rotaton_angle = 90
+        rotation_angle = 90
     else:
-        rotaton_angle = np.rad2deg(np.arctan((y1-y2)/(x1-x2)))
+        rotation_angle = np.rad2deg(np.arctan((y1-y2)/(x1-x2)))
     
     #center = (int(abs(x1-x2)), int(abs(y1-y2)))
     rows, cols = img.shape[:2]
     center = (cols/2, rows/2)
-    rotation_matrix = cv2.getRotationMatrix2D(center, rotaton_angle,1)
+    rotation_matrix = cv2.getRotationMatrix2D(center, rotation_angle,1)
     
     # rotation calculates the cos and sin, taking absolutes of those.
     abs_cos = abs(rotation_matrix[0,0]) 
