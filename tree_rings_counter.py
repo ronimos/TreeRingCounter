@@ -90,7 +90,7 @@ def rotate_image(img, p1, p2):
     new_w = int(rows * abs_sin + cols * abs_cos)
     new_h = int(rows * abs_cos + cols * abs_sin)
     
-    # subtract old image center (bringing image back to origo) and adding the new image center coordinates
+    # subtract old image center (bringing image back to original) and add the new image center coordinates before rotation
     rotation_matrix[0, 2] += new_w/2 - center[0]
     rotation_matrix[1, 2] += new_h/2 - center[1]
 
